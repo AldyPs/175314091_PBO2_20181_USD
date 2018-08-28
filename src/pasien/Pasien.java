@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pasien;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -14,8 +14,8 @@ import java.util.Date;
  */
 public class Pasien {
 
-        private String nama,alamat,tempatLahir;
-        private Date tanggalLahir;
+    private String nama, alamat, tempatLahir, nomorRekamMedis;
+    private Date tanggalLahir;
 
     public Pasien(String nama, String alamat, String tempatLahir, Date tanggalLahir) {
         this.nama = nama;
@@ -25,8 +25,9 @@ public class Pasien {
     }
 
     Pasien(String aldy) {
-       
+
     }
+
     public String getNama() {
         return nama;
     }
@@ -60,19 +61,20 @@ public class Pasien {
     }
 
     void setTanggalLahir(int tahun, int bulan, int tanggal) {
-      tanggalLahir = new Date(tahun - 1900, bulan - 1, tanggal);
+        tanggalLahir = new Date(tahun - 1900, bulan - 1, tanggal);
     }
-//    public Date getTanggalLahir(){
-//        return tanggalLahir;
-//    }
-//    public Date getDate(){
-//        return 
-//    }
-    public int getUsia(){
+    
+    public int getUsia() {
         Date today = new Date();
         return today.getYear() - tanggalLahir.getYear();
     }
-        
     
+    public void nomorRekamMedis(){
+        Date today = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("yyyyMMdd");
+        nomorRekamMedis = ft.format(today);
+        System.out.println("Nomor Rekam Medis : "+ nomorRekamMedis + nama.substring(0, 3));
+    }
     
+
 }

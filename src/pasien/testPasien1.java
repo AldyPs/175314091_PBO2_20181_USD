@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pasien;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,10 +13,20 @@ import java.util.Date;
  * @author admin
  */
 public class testPasien1 {
+
     public static void main(String[] args) {
-        Pasien aldy = new Pasien("aldy");
-         
-        aldy.setTanggalLahir(1999,11,15);
-        System.out.println("Umur : " + aldy.getUsia());
+        Pasien cek = new Pasien("aldy");
+        
+        cek.setTanggalLahir(1999, 11, 15);
+        cek.setNama("Aldy Pamungkas");
+        cek.setAlamat("Jogjakarta");
+        cek.setTempatLahir("Palangka Raya");
+        
+        cek.nomorRekamMedis();
+        System.out.println("Umur            : " + cek.getUsia());
+        System.out.println("Nama            : " + cek.getNama());
+        System.out.println("Tempat lahir    : " + cek.getTempatLahir());
+        System.out.println("Alamat          : " + cek.getAlamat());
+       
     }
 }
